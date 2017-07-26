@@ -32,4 +32,13 @@ occupations = [:]
 * 2.1 可选值：
 1）在类型后面加一个问号来标记这个变量的值是可选的；
 2）一个可选的值是一个具体的值或者 是 nil 以表示值缺失；
-3）可以一起使用 if 和 let 来处理值缺失的情况：如果变量的可选值是 ，条件会判断为 ，大括号中的代码会被跳过。如果不是 ，会将值解包并赋给 后面的常         量，这样代码块中就可以使用这个值了。
+3）可以一起使用 if 和 let 来处理值缺失的情况：如果变量的可选值是 nil，条件会判断为 false，大括号中的代码会被跳过。如果不是 nil，会将值解包并赋给 let 后面的常量，这样代码块中就可以使用这个值了。
+```
+var optionalString: String? = "Hello"
+print(optionalString == nil)
+var optionalName: String? = "John Appleseed"
+var greeting = "Hello!"
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+}
+```
