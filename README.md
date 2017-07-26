@@ -93,9 +93,4 @@ shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 ```
 
-**目录 (Table of Contents)**
-
-
-[TOCM]
-
-[TOC]
+> uhijlk;
