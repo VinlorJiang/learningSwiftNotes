@@ -36,9 +36,62 @@ occupations = [:]
 ```
 var optionalString: String? = "Hello"
 print(optionalString == nil)
+
 var optionalName: String? = "John Appleseed"
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
 }
 ```
+* 2.2 另一种处理可选值的方法是通过使用 ?? 操作符来提供一个默认值.
+```
+
+ let nickName: String? = nil
+ let fullName: String = "John Appleseed"
+ let informalGreeting = "Hi \(nickName ?? fullName)"
+```
+* 2.3 运行 switch 中匹配到的子句之后，程序会退出 switch 语句，并不会继续向下运行，所以不需要在每个子句结尾 写 break .
+* 2.4 可以在循环中使用 ..< 来表示范围,栗子：
+```
+ var total = 0
+ for i in 0..<4 { // 0,1,2,3不等于4
+ total += i 
+ }
+ print(total)
+```
+### 3.函数和闭包：
+* 3.1 默认情况下，函数使用它们的参数名称作为它们参数的标签，在参数名称前可以自定义参数标签，或者使用 _ 表示不使用参数标签。如：
+```
+func greet(_ person: String, on day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet("John", on: "Wednesday")  // 函数调用person参数名称酒没显示出来
+```
+* 3.1 函数可以嵌套，被嵌套的函数可以访问外侧函数的变量；
+* 3.2 使用 in 将参数和返回值类型声明与闭包函数体进行分离，栗子：
+```
+ numbers.map({
+     (number: Int) -> Int in
+     let result = 3 * number
+     return result
+})
+```
+### 4.对象和类
+* 4.1 使用 class 和类名来创建一个类，如：
+```
+class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+```
+* 4.2 要创建一个类的实例，在类名后面加上括号。使用点语法来访问实例的属性和方法,栗子：
+```
+var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+```
+
+
+
