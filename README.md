@@ -93,4 +93,11 @@ shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 ```
 
+## 闭包：
+### 1.闭包表达死语法：闭包的函数体部分由关键字 in 引入。该关键字表示闭包的参数和返回值类型定义已经完成，闭包函数体即将开始。
+```
+{ (parameters) -> retureType in
+statements
+}
+```
 > uhijlk;
